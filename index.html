@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>devtask</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-code"></i> devtasks</h1>
+            <p>organizador de estudos para devs</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalTasks">0</div>
+                <div class="stat-label">Total de Tarefas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="completedTasks">0</div>
+                <div class="stat-label">Concluídas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="pendingTasks">0</div>
+                <div class="stat-label">Pendentes</div>
+            </div>
+    </div>
+
+    <div class="add-task">
+            <input type="text" id="taskInput" placeholder="Adicionar nova tarefa (ex: Estudar JavaScript DOM)">
+            <select id="categorySelect">
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="js">JavaScript</option>
+                <option value="git">Git/GitHub</option>
+                <option value="projeto">Projeto Prático</option>
+                <option value="outro">Outro</option>
+            </select>
+            <button onclick="addTask()" class="btn-add">
+                <i class="fas fa-plus"></i> Adicionar
+            </button>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterTasks('all')">Todas</button>
+            <button class="filter-btn" onclick="filterTasks('pending')">Pendentes</button>
+            <button class="filter-btn" onclick="filterTasks('completed')">Concluídas</button>
+        </div>
+
+        <div class="task-list" id="taskList">
+            <!-- Tarefas serão adicionadas aqui via JavaScript -->
+        </div>
+
+        <div class="default-tasks">
+            <h3><i class="fas fa-bolt"></i> Tarefas Sugeridas para Iniciantes</h3>
+            <div class="suggested-tasks">
+                <div class="suggested-task" onclick="addSuggestedTask('Criar primeiro repositório no GitHub')">
+                    📁 Criar primeiro repositório no GitHub
+                </div>
+                <div class="suggested-task" onclick="addSuggestedTask('Estudar flexbox e grid no CSS')">
+                    🎨 Estudar flexbox e grid no CSS
+                </div>
+                <div class="suggested-task" onclick="addSuggestedTask('Praticar manipulação de DOM com JavaScript')">
+                    ⚡ Praticar manipulação de DOM com JavaScript
+                </div>
+                <div class="suggested-task" onclick="addSuggestedTask('Fazer deploy de um projeto no GitHub Pages')">
+                    🚀 Fazer deploy de um projeto no GitHub Pages
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
